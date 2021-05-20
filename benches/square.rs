@@ -3,10 +3,7 @@ use rug::Integer;
 
 fn bench_increment(c: &mut Criterion) {
     let mut group = c.benchmark_group("square");
-    let inputs = [
-        3u128,
-        2u128.pow(63) + 7,
-    ];
+    let inputs = [3u128, 2u128.pow(63) + 7];
 
     for input in inputs.iter().map(|i| *i) {
         group.bench_with_input(
@@ -26,7 +23,7 @@ fn bench_increment(c: &mut Criterion) {
             |b, input| {
                 let mut value = Integer::from(input.clone());
                 b.iter(|| {
-                    value.square_mut();
+                    value = Integer::from(value.square_ref());
                 })
             },
         );
