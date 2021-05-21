@@ -20,3 +20,4 @@ harness = false
 [[bench]]
 name = "is_divisible"
 harness = false 
+ 

@@ -1,7 +1,7 @@
 use criterion::{criterion_group, criterion_main, BenchmarkId, Criterion};
 use rug::Integer;
 
-fn bench_increment(c: &mut Criterion) {
+fn bench_square(c: &mut Criterion) {
     let mut group = c.benchmark_group("square");
     let inputs = [3u128, 2u128.pow(63) + 7];
 
@@ -31,5 +31,5 @@ fn bench_increment(c: &mut Criterion) {
     group.finish();
 }
 
-criterion_group!(benches, bench_increment);
+criterion_group!(benches, bench_square);
 criterion_main!(benches);

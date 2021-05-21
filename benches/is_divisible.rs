@@ -11,7 +11,7 @@ fn b_divides_a_rug_integer(a: &Integer, b: &Integer) -> bool {
     a.is_divisible(b)
 }
 
-fn bench_increment(c: &mut Criterion) {
+fn bench_is_divisible(c: &mut Criterion) {
     let mut group = c.benchmark_group("is_divisible");
     let inputs = [
         (3u128, 7u128),
@@ -43,5 +43,5 @@ fn bench_increment(c: &mut Criterion) {
     group.finish();
 }
 
-criterion_group!(benches, bench_increment);
+criterion_group!(benches, bench_is_divisible);
 criterion_main!(benches);
